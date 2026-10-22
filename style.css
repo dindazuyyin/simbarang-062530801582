@@ -1,0 +1,211 @@
+
+/* Pengaturan dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #12305a;
+    color: white;
+    text-align: center;
+    padding: 28px 16px;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+/* Navigasi menggunakan Flexbox */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    background-color: #1e4578;
+    padding: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #315f96;
+}
+
+/* Konten utama */
+main {
+    width: min(1100px, 92%);
+    margin: 28px auto;
+}
+
+section {
+    background-color: white;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.08);
+}
+
+section h2 {
+    color: #12305a;
+    margin-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 18px;
+}
+
+/* Tabel inventaris */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #dbe3ed;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #12305a;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+tbody tr:hover {
+    background-color: #e0ecfa;
+}
+
+/* Formulir menggunakan CSS Grid */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font: inherit;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #5287c7;
+    border-color: #315f96;
+}
+
+button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #12305a;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e4578;
+}
+
+/* Tombol formulir memenuhi kolom */
+form button {
+    align-self: end;
+}
+
+/* Footer */
+footer {
+    background-color: #12305a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+/* Tablet: 600px sampai 1024px */
+@media (min-width: 600px) and (max-width: 1024px) {
+    main {
+        width: 95%;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+    }
+}
+
+/* Mobile: kurang dari 600px */
+@media (max-width: 599px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    main {
+        width: 94%;
+        margin: 16px auto;
+    }
+
+    section {
+        padding: 16px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    #inventaris {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 550px;
+    }
+}
